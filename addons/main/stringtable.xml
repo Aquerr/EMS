@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="EMS">
+    <Package name="main">
+        <Key ID="str_ems_main_checkfuel">
+            <English>Check fuel</English>
+            <Polish>Sprawdź paliwo</Polish>
+        </Key>
+        <Key ID="str_ems_main_checkoxygen">
+            <English>Check oxygen</English>
+            <Polish>Sprawdź tlen</Polish>
+        </Key>
+        <Key ID="str_ems_main_flightbackward">
+            <English>Fly backward</English>
+            <Polish>Lot w tył</Polish>
+        </Key>
+        <Key ID="str_ems_main_flightdownward">
+            <English>Fly downward</English>
+            <Polish>Lot w dół</Polish>
+        </Key>
+        <Key ID="str_ems_main_flightforward">
+            <English>Fly forward</English>
+            <Polish>Lot w przód</Polish>
+        </Key>
+        <Key ID="str_ems_main_flightleft">
+            <English>Fly left</English>
+            <Polish>Lot w lewo</Polish>
+        </Key>
+        <Key ID="str_ems_main_flightright">
+            <English>Fly right</English>
+            <Polish>Lot w prawo</Polish>
+        </Key>
+        <Key ID="str_ems_main_flightupward">
+            <English>Fly upward</English>
+            <Polish>Lot w dół</Polish>
+        </Key>
+        <Key ID="str_ems_main_keybindingemsmaincategory">
+            <English>EMS</English>
+            <Polish>EMS</Polish>
+        </Key>
+        <Key ID="str_ems_main_setting_spacesuitoxygenenabled">
+            <English>Oxygen enabled</English>
+            <Polish>Tlen włączony</Polish>
+        </Key>
+        <Key ID="str_ems_main_settingsemsmaincategory">
+            <English>EMS</English>
+            <Polish>EMS</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitaccelleration">
+            <English>Acceleration</English>
+            <Polish>Przyspieszenie</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitbackpackclassnames">
+            <English>Backpack class names</English>
+            <Polish>Nazwy klas plecaków</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitdamagemodewhennosuitinspace">
+            <English>Type of damage when no suit</English>
+            <Polish>Typ obrażeń bez skafandra</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitfuelconsumptionspeed">
+            <English>Fuel consumption speed</English>
+            <Polish>Prędkość zużycia paliwa</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitfuelenabled">
+            <English>Fuel enabled</English>
+            <Polish>Paliwo włączone</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitgogglesclassnames">
+            <English>Goggles class names</English>
+            <Polish>Nazwy klas gogli</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitheadgearclassnames">
+            <English>Headgear class names</English>
+            <Polish>Nazwy klas nakryć głowy</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitmaxspeed">
+            <English>Max fly speed</English>
+            <Polish>Maksymalna prędkość lotu</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitoxygenconsumptionspeed">
+            <English>Oxygen consumption speed</English>
+            <Polish>Prędkość zużycia tlenu</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuituniformclassnames">
+            <English>Uniform class names</English>
+            <Polish>Nazwy klas kombinezonów</Polish>
+        </Key>
+        <Key ID="str_ems_main_spacesuitvestclassnames">
+            <English>Vest class names</English>
+            <Polish>Nazwy klas kamizelek</Polish>
+        </Key>
+        <Key ID="str_ems_main_subcategory_spacesuit">
+            <English>EMS Space Suit</English>
+            <Polish>EMS Space Suit</Polish>
+        </Key>
+        <Key ID="str_ems_main_toggleflight">
+            <English>Toggle flight</English>
+            <Polish>Włącz/Wyłącz latanie</Polish>
+        </Key>
+    </Package>
+</Project>

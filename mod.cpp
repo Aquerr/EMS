@@ -1,0 +1,12 @@
+name = "EMS";
+picture = "EMS_1024.paa";
+actionName = "GitHub";
+action = "https://github.com/Aquerr/EMS";
+description = "Mod for Arma 3 adding Eva Movement System and zero gravity";
+logo = "EMS_128.paa";
+logoOver = "EMS_128.paa";
+tooltip = "EMS";
+tooltipOwned = "EMS Owned";
+overview = "Mod for Arma 3 adding Eva Movement System and zero gravity";
+author = "Aquerr (Nerdi)";
+overviewPicture = "";

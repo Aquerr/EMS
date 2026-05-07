@@ -1,0 +1,28 @@
+name = "EMS"
+author = "Aquerr (Nerdi)"
+prefix = "ems"
+mainprefix = "z"
+
+[properties]
+author = "Aquerr (Nerdi)"
+url = "https://github.com/Aquerr/EMS"
+
+[version]
+path = "addons/main/script_version.hpp"
+git_hash = 8
+
+[files]
+include = [
+    "mod.cpp",      # These files are copied to the build directory by default
+    "meta.cpp",     # They do not need to be added to your list
+    "LICENSE",
+    "keys/**",
+    "EMS_128.paa",
+    "EMS_1024.paa"
+]
+exclude = [
+    ".idea/**"
+]
+
+[lints.sqf]
+command_case = true
