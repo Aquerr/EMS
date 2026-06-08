@@ -125,7 +125,7 @@ if (isClass(configFile >> "CfgPatches" >> "cba_keybinding")) then {
     "SLIDER",
     [LLSTRING(SpaceSuitAccelleration)],
     [EMS_SETTINGS_CAT, LSTRING(SubCategory_SpaceSuit)],
-    [0.1, 200, 50, 1],
+    [0.1, 200, 15, 1],
     true,
     {},
     false

@@ -3,7 +3,7 @@
 // ====================== Functions ======================
 
 EMS_IsPlayerInOpenSpace = {
-	private _spaceTriggers = emsSpaceTriggers;
+	private _spaceTriggers = emsSpaceZones;
 	private _playerInOpenSpace = false;
 	{
 		_trigger = _x;
@@ -439,7 +439,7 @@ if (GVAR(cbaKeybindingsActive)) then {
 };
 
 // Spacesuit configuration
-emsSpaceTriggers = [space_trigger_1]; // Create on init and append space_triggers via EDEN modules
+// emsSpaceZones = []; // Create on init and append space_triggers via EDEN modules
 
 //TODO: Move to addon settings
 player setUnitFreefallHeight 10000;

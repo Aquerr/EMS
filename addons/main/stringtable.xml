@@ -37,6 +37,30 @@
             <English>EMS</English>
             <Polish>EMS</Polish>
         </Key>
+        <Key ID="str_ems_main_module_fuelstation_description">
+            <English>Space suit's fuel can be refueled here</English>
+            <Polish>Paliwo skafandra może być tutaj uzupełnione</Polish>
+        </Key>
+        <Key ID="str_ems_main_module_fuelstation_displayname">
+            <English>Fuel station</English>
+            <Polish>Stacja paliwa</Polish>
+        </Key>
+        <Key ID="str_ems_main_module_oxygenstation_description">
+            <English>Space suit's oxygen can be refueled here</English>
+            <Polish>Tlen skafandra może być tutuaj uzupełniony</Polish>
+        </Key>
+        <Key ID="str_ems_main_module_oxygenstation_displayname">
+            <English>Oxygen station</English>
+            <Polish>Stacja tlenu</Polish>
+        </Key>
+        <Key ID="str_ems_main_module_zerogravityzone_description">
+            <English>Different movement mechanics work here as well as oxygen is required</English>
+            <Polish>Działa tutaj inna mechanika poruszania i wymagany jest tlen</Polish>
+        </Key>
+        <Key ID="str_ems_main_module_zerogravityzone_displayname">
+            <English>Zero gravity zone</English>
+            <Polish>Obszar zerowej grawitacji</Polish>
+        </Key>
         <Key ID="str_ems_main_setting_spacesuitoxygenenabled">
             <English>Oxygen enabled</English>
             <Polish>Tlen włączony</Polish>
