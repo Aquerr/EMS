@@ -136,7 +136,7 @@ if (isClass(configFile >> "CfgPatches" >> "cba_keybinding")) then {
     "EDITBOX",
     [LLSTRING(SpaceSuitHeadgearClassNames)],
     [EMS_SETTINGS_CAT, LSTRING(SubCategory_SpaceSuit)],
-    "['EXPNS_MCRNHelm']",
+    "['H_PilotHelmetFighter_B', 'EXPNS_MCRNHelm']",
     true,
     {
         GVAR(SpaceSuitHeadgearClassNames) = parseSimpleArray GVAR(SpaceSuitHeadgearClassNamesSetting);
@@ -149,7 +149,7 @@ if (isClass(configFile >> "CfgPatches" >> "cba_keybinding")) then {
     "EDITBOX",
     [LLSTRING(SpaceSuitGogglesClassNames)],
     [EMS_SETTINGS_CAT, LSTRING(SubCategory_SpaceSuit)],
-    "['TKE_MDWebbingNettingGrey']",
+    "['G_AirPurifyingRespirator_02_black_F', 'TKE_MDWebbingNettingGrey']",
     true,
     {
         GVAR(SpaceSuitGogglesClassNames) = parseSimpleArray GVAR(SpaceSuitGogglesClassNamesSetting);
@@ -162,7 +162,7 @@ if (isClass(configFile >> "CfgPatches" >> "cba_keybinding")) then {
     "EDITBOX",
     [LLSTRING(SpaceSuitUniformClassNames)],
     [EMS_SETTINGS_CAT, LSTRING(SubCategory_SpaceSuit)],
-    "['EXPNS_Suit_MCR']",
+    "['U_C_CBRN_Suit_01_White_F', 'EXPNS_Suit_MCR']",
     true,
     {
         GVAR(SpaceSuitUniformClassNames) = parseSimpleArray GVAR(SpaceSuitUniformClassNamesSetting);
@@ -175,7 +175,7 @@ if (isClass(configFile >> "CfgPatches" >> "cba_keybinding")) then {
     "EDITBOX",
     [LLSTRING(SpaceSuitVestClassNames)],
     [EMS_SETTINGS_CAT, LSTRING(SubCategory_SpaceSuit)],
-    "['EXPNS_MCR_LightArmor']",
+    "['V_RebreatherB', 'EXPNS_MCR_LightArmor']",
     true,
     {
         GVAR(SpaceSuitVestClassNames) = parseSimpleArray GVAR(SpaceSuitVestClassNamesSetting);
@@ -188,7 +188,7 @@ if (isClass(configFile >> "CfgPatches" >> "cba_keybinding")) then {
     "EDITBOX",
     [LLSTRING(SpaceSuitBackpackClassNames)],
     [EMS_SETTINGS_CAT, LSTRING(SubCategory_SpaceSuit)],
-    "['EXPNS_AirPack_MCRN']",
+    "['C_IDAP_UAV_01_backpack_F', 'EXPNS_AirPack_MCRN']",
     true,
     {
         GVAR(SpaceSuitBackpackClassNames) = parseSimpleArray GVAR(SpaceSuitBackpackClassNamesSetting);

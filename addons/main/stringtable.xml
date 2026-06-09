@@ -34,8 +34,8 @@
             <Polish>Lot w dół</Polish>
         </Key>
         <Key ID="str_ems_main_keybindingemsmaincategory">
-            <English>EMS</English>
-            <Polish>EMS</Polish>
+            <English>EMS - Eva Movement System</English>
+            <Polish>EMS - Eva Movement System</Polish>
         </Key>
         <Key ID="str_ems_main_module_fuelstation_description">
             <English>Space suit's fuel can be refueled here</English>
@@ -66,8 +66,8 @@
             <Polish>Tlen włączony</Polish>
         </Key>
         <Key ID="str_ems_main_settingsemsmaincategory">
-            <English>EMS</English>
-            <Polish>EMS</Polish>
+            <English>EMS - Eva Movement System</English>
+            <Polish>EMS - Eva Movement System</Polish>
         </Key>
         <Key ID="str_ems_main_spacesuitaccelleration">
             <English>Acceleration</English>

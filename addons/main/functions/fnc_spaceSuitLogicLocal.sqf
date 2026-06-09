@@ -215,6 +215,8 @@ EMS_SpaceSuit_FlightToggle = {
 		}
         
 	} else {
+		if(!([] call EMS_SpaceSuit_HasFlightEquipment)) exitWith {};
+
         player setVariable ["EMS_SpaceSuit_Flight_Enabled", true];
 		player setUnitFreefallHeight 100000;
         hint "Space suit: flight enabled";
@@ -223,6 +225,11 @@ EMS_SpaceSuit_FlightToggle = {
         _pos set [2, (_pos select 2) + 1];
         player setPosATL _pos;
 	};
+};
+
+EMS_SpaceSuit_HasFlightEquipment = {
+	private _hasJetpack = (backpack player) in GVAR(SpaceSuitBackpackClassNames);
+	_hasJetpack;
 };
 
 EMS_SpaceSuit_FlightLoop = {
@@ -238,6 +245,14 @@ EMS_SpaceSuit_FlightLoop = {
 
 			if (!alive player) exitWith {
 				player setVariable ["ems_spacesuit_velocity", [0,0,0]];
+				if ([player] call EMS_IsPlayerInOpenSpace) then {
+					private _vel = player getVariable ["ems_spacesuit_velocity", [0,0,0]]; 
+					player setVelocity _vel;
+				};
+			};
+
+			if (!([] call EMS_SpaceSuit_HasFlightEquipment)) exitWith {
+				player setVariable ["EMS_SpaceSuit_Flight_Enabled", false];
 				if ([player] call EMS_IsPlayerInOpenSpace) then {
 					private _vel = player getVariable ["ems_spacesuit_velocity", [0,0,0]]; 
 					player setVelocity _vel;
@@ -311,7 +326,7 @@ EMS_SpaceSuit_HandleJetPackFlight = {
 	if (vectorMagnitude _moveVec > 0) then {
 		if (not EMS_SpaceSuitAirPressureSoundPlaying) then {
 			EMS_SpaceSuitAirPressureSoundPlaying = true;
-			playSound3D ["air_pressure", player, false, getPosASL player, 0.5, 1];
+			playSound3D [QPATHTOF(data\sounds\air_pressure.ogg), player, false, getPosASL player, 0.5, 1];
 			[
 				{EMS_SpaceSuitAirPressureSoundPlaying = false;}, 
 				[],
