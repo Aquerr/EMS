@@ -83,7 +83,7 @@ EMS_SpaceSuit_OxygenLoop = {
 				} else {
 					if (_oxygen > 3) then {
 						private _sounds = ([] call EMS_SpaceSuit_HeavyBreathSounds) + ([] call EMS_SpaceSuit_BreathSounds);
-						[_sounds, 0.5] call EMS_SpaceSuit_PlayRandomBreathSound;	
+						[_sounds, 0.5] call EMS_SpaceSuit_PlayRandomBreathSound;
 					} else {
 						_sounds = [] call EMS_SpaceSuit_CoughSounds;
 						[_sounds, 0.5] call EMS_SpaceSuit_PlayRandomBreathSound;

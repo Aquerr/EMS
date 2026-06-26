@@ -1,7 +1,9 @@
+PREP(emptyFunction);
 PREP(spaceSuitLogicLocal);
 PREP(initPostPlayer);
-PREP(emptyFunction);
-
+PREP(addZeroGravityZone);
+PREP(initFuelStation);
+PREP(initOxygenStation);
 
 // Module functions
 PREP_BY_PATH(moduleFuelStation,functions\eden\fnc_moduleFuelStation.sqf);

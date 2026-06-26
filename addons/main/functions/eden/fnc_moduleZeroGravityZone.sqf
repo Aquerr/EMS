@@ -7,12 +7,40 @@ params [
 
 if (!_activated) exitWith {};
 
-private _area = [getPos _logic];
-_area append (_logic getVariable ["objectarea",[]]);
-_area params ["_center","_a","_b", "_angle", "_isRectangle", "_c"];
-private _radius = (_a max _b) * 1.42;
-private _angle = getDir _logic;
+private _synchronizedObjects = synchronizedObjects _logic;
+private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetector" };
 
-waitUntil { sleep 0.2; not (isNil "emsSpaceZones")};
-// Array with [center, a, b, angle, isRectangle, c, usePosWorld]
-emsSpaceZones pushBack _area;
+private _initZeroGravityZone = {
+	params ["_logic"];
+
+	private _area = [getPos _logic];
+	_area append (_logic getVariable ["objectarea",[]]);
+	_area params ["_center","_a","_b", "_angle", "_isRectangle", "_c"];
+
+	[_area] call FUNC(addZeroGravityZone);
+};
+
+if (_syncedTriggers isNotEqualTo []) then {
+	{
+		private _trigger = _x;
+		// Trigger based init
+		[
+			_trigger,
+			_logic,
+			_initZeroGravityZone
+		] spawn {
+			params [
+				"_trigger",
+				"_logic",
+				"_initZeroGravityZone"
+			];
+
+			waitUntil { sleep 1; triggerActivated _trigger };
+
+			_logic call _initZeroGravityZone;
+		};
+	} forEach _syncedTriggers;
+} else {
+	// Regular init (no trigger)
+	_logic call _initZeroGravityZone;
+};
