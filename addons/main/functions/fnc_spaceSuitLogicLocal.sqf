@@ -55,12 +55,10 @@ EMS_SpaceSuit_HandleSpaceDamage = {
 
 EMS_SpaceSuit_OxygenLoop = {
 	[] spawn {
-		while {true} do {			
+		[{
 			if (!GVAR(SpaceSuitOxygenEnabled)) exitWith {};
 
-			if (!alive player) exitWith {
-				sleep 5;
-			};
+			if (!alive player) exitWith {};
 
 			private _hasGoggles = (goggles player) in GVAR(SpaceSuitGogglesClassNames);
 			private _hasHeadgear = (headgear player) in GVAR(SpaceSuitHeadgearClassNames);
@@ -112,9 +110,7 @@ EMS_SpaceSuit_OxygenLoop = {
 					[player, _hasHeadgear, _hasGoggles, _hasUniform, _hasVest, _hasBackpack] call EMS_SpaceSuit_HandleSpaceDamage;
 				};
 			};
-
-			sleep 5;
-		};
+		}, 5] call CBA_fnc_addPerFrameHandler;
 	};
 };
 
