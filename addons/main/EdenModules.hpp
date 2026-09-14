@@ -1,6 +1,7 @@
 class Logic;
 class Module_F: Logic {
     class AttributesBase {
+        class Edit;
         class ModuleDescription;
     };
     class ModuleDescription;
@@ -26,6 +27,26 @@ class GVAR(moduleFuelStation): GVAR(baseEdenModule) {
     function = QFUNC(moduleFuelStation);
     scope = 2;
     class Attributes: AttributesBase {
+        class Capacity: Edit {
+            property = QGVAR(moduleFuelStation_Capacity);
+            displayName = CSTRING(CapacityLabel);
+            tooltip = CSTRING(CapacityTooltip);
+            typeName = "NUMBER";
+            defaultValue = "500";
+        };
+        class Fuel: Edit {
+            property = QGVAR(moduleFuelStation_Fuel);
+            displayName = CSTRING(FuelLabel);
+            typeName = "NUMBER";
+            defaultValue = "500";
+        };
+        class DrainSpeed: Edit {
+            property = QGVAR(moduleFuelStation_DrainSpeed);
+            displayName = CSTRING(DrainSpeedLabel);
+            typeName = "NUMBER";
+            defaultValue = "2";
+        };
+
         class ModuleDescription: ModuleDescription {};
     };
     class ModuleDescription: ModuleDescription {
@@ -38,6 +59,25 @@ class GVAR(moduleOxygenStation): GVAR(baseEdenModule) {
     function = QFUNC(moduleOxygenStation);
     scope = 2;
     class Attributes: AttributesBase {
+        class Capacity: Edit {
+            property = QGVAR(moduleOxygenStation_Capacity);
+            displayName = CSTRING(CapacityLabel);
+            tooltip = CSTRING(CapacityTooltip);
+            typeName = "NUMBER";
+            defaultValue = "500";
+        };
+        class Fuel: Edit {
+            property = QGVAR(moduleOxygenStation_Oxygen);
+            displayName = CSTRING(OxygenLabel);
+            typeName = "NUMBER";
+            defaultValue = "500";
+        };
+        class DrainSpeed: Edit {
+            property = QGVAR(moduleFuelStation_DrainSpeed);
+            displayName = CSTRING(DrainSpeedLabel);
+            typeName = "NUMBER";
+            defaultValue = "2";
+        };
         class ModuleDescription: ModuleDescription {};
     };
     class ModuleDescription: ModuleDescription {
