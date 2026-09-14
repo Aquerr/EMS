@@ -29,24 +29,24 @@ EMS_SpaceSuit_HandleSpaceDamage = {
 
 			// ACE
 			if (not _hasHeadgear || not _hasGoggles) then {
-				[player, 0.05, "Head", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
+				[player, 0.05, "Head", "burn"] call ace_medical_fnc_addDamageToUnit;
 			};
 			if (not _hasUniform) then {
-				[player, 0.1, "Body", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
-				[player, 0.1, "LeftArm", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
-				[player, 0.1, "RightArm", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
-				[player, 0.1, "LeftLeg", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
-				[player, 0.1, "RightLeg", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
+				[player, 0.1, "Body", "burn"] call ace_medical_fnc_addDamageToUnit;
+				[player, 0.1, "LeftArm", "burn"] call ace_medical_fnc_addDamageToUnit;
+				[player, 0.1, "RightArm", "burn"] call ace_medical_fnc_addDamageToUnit;
+				[player, 0.1, "LeftLeg", "burn"] call ace_medical_fnc_addDamageToUnit;
+				[player, 0.1, "RightLeg", "burn"] call ace_medical_fnc_addDamageToUnit;
 			};
 			if (not _hasVest) then {
-				[player, 0.05, "Body", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
+				[player, 0.05, "Body", "burn"] call ace_medical_fnc_addDamageToUnit;
 			};
 		};
 		case (GVAR(SpaceSuitDamageModeWhenNoSuitInSpace) == 2): { // Kill
 			if (GVAR(isAceMedicalEnabled)) then {
-				[player, 100, "Head", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
+				[player, 100, "Head", "burn"] call ace_medical_fnc_addDamageToUnit;
 			} else {
-				_player setDamage 1;
+				player setDamage 1;
 			};
 		};
 		default { };
@@ -89,7 +89,7 @@ EMS_SpaceSuit_OxygenLoop = {
 						// Apply damage
 						if (_oxygen < 0) then {
 							if (GVAR(isAceMedicalEnabled)) then {
-								[player, 0.05, "Head", "burn"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
+								[player, 0.05, "Head", "burn"] call ace_medical_fnc_addDamageToUnit;
 							} else {
 								player setDamage ((damage player) + 0.05); 
 							};
@@ -114,27 +114,33 @@ EMS_SpaceSuit_OxygenLoop = {
 	};
 };
 
+// Convert to global and local version using CBA events
 EMS_SpaceSuit_OxygenCheck = {
 	private _oxygen = [player] call EMS_SpaceSuit_GetOxygen;
 	hintSilent (format ["Current oxygen: %1", _oxygen]);
 };
 
+// Convert to global and local version using CBA events
 EMS_SpaceSuit_GetOxygen = {
 	_oxygen = player getVariable ["EMS_SpaceSuit_Oxygen", 0];
 	_oxygen;
 };
 
+// Convert to global and local version using CBA events
 EMS_SpaceSuit_UseOxygen = {
 	params ["_player", ["_amount", 0.1, [0]]];
 	private _oxygen = player getVariable ["EMS_SpaceSuit_Oxygen", 0];
 	player setVariable ["EMS_SpaceSuit_Oxygen", _oxygen - _amount];
 };
 
+// Convert to global and local version using CBA events
 EMS_SpaceSuit_SetOxygen = {
 	params ["_player", ["_amount", 100, [0]]];
 	player setVariable ["EMS_SpaceSuit_Oxygen", _amount];
 };
 
+
+// Convert to global and local version using CBA events
 EMS_SpaceSuit_RefillOxygen = {
 	params ["_player", ["_amount", 0.5, [0]]];
 	private _oxygen = player getVariable ["EMS_SpaceSuit_Oxygen", 0];
