@@ -56,60 +56,24 @@ EMS_SpaceSuit_HandleSpaceDamage = {
 EMS_SpaceSuit_OxygenLoop = {
 	[] spawn {
 		[{
+			scopeName "ems_spacesuit_oxygen_loop";
+			
 			if (!GVAR(SpaceSuitOxygenEnabled)) exitWith {};
 
 			if (!alive player) exitWith {};
 
-			private _hasGoggles = (goggles player) in GVAR(SpaceSuitGogglesClassNames);
-			private _hasHeadgear = (headgear player) in GVAR(SpaceSuitHeadgearClassNames);
-			private _hasUniform = (uniform player) in GVAR(SpaceSuitUniformClassNames);
-			private _hasVest = (vest player) in GVAR(SpaceSuitVestClassNames);
-			private _hasBackpack = (backpack player) in GVAR(SpaceSuitBackpackClassNames);
-			private _hasFullSuit = _hasHeadgear && _hasGoggles && _hasUniform && _hasVest && _hasBackpack;
-
-			private _isPlayerInOpenSpace = [] call EMS_IsPlayerInOpenSpace;
-
-			// TODO: Addon setting for what body parts are required to breathe.
-
-			// If has mask then play sound
-			if (_hasGoggles) then {
-				[player, GVAR(SpaceSuitOxygenConsumptionSpeed)] call EMS_SpaceSuit_UseOxygen;
-				_oxygen = [player] call EMS_SpaceSuit_GetOxygen;
-				if (_oxygen > 8) then {
-					private _sounds = [] call EMS_SpaceSuit_BreathSounds;
-					[_sounds, 0.5] call EMS_SpaceSuit_PlayRandomBreathSound;
-				} else {
-					if (_oxygen > 3) then {
-						private _sounds = ([] call EMS_SpaceSuit_HeavyBreathSounds) + ([] call EMS_SpaceSuit_BreathSounds);
-						[_sounds, 0.5] call EMS_SpaceSuit_PlayRandomBreathSound;
-					} else {
-						_sounds = [] call EMS_SpaceSuit_CoughSounds;
-						[_sounds, 0.5] call EMS_SpaceSuit_PlayRandomBreathSound;
-
-						// Apply damage
-						if (_oxygen < 0) then {
-							if (GVAR(isAceMedicalEnabled)) then {
-								[player, 0.05, "Head", "burn"] call ace_medical_fnc_addDamageToUnit;
-							} else {
-								player setDamage ((damage player) + 0.05); 
-							};
-						};
-					};
+			private _oxygenPreconditions = player getVariable ["ems_spacesuit_oxygen_preconditions", []];
+			private _passed = true;
+			{
+				private _precondition = _x;
+				private _passed = [player] call _precondition;
+				if (!_passed) then {
+					breakTo "ems_spacesuit_oxygen_loop";
 				};
+			} forEach _oxygenPreconditions;
+			if (!_passed) exitWith {};
 
-			} else {
-				if (_isPlayerInOpenSpace) then {
-					_sounds = [] call EMS_SpaceSuit_CoughSounds;
-					[_sounds, 1] call EMS_SpaceSuit_PlayRandomBreathSound;
-					[player, _hasHeadgear, false, _hasUniform, _hasVest, _hasBackpack] call EMS_SpaceSuit_HandleSpaceDamage;
-				};
-			};
-
-			if (_isPlayerInOpenSpace) then {
-				if (not _hasfullSuit) then {
-					[player, _hasHeadgear, _hasGoggles, _hasUniform, _hasVest, _hasBackpack] call EMS_SpaceSuit_HandleSpaceDamage;
-				};
-			};
+			[QGVAR(oxygenLoopTickEvent), [player]] call CBA_fnc_localEvent;
 		}, 5] call CBA_fnc_addPerFrameHandler;
 	};
 };
@@ -150,7 +114,8 @@ EMS_SpaceSuit_RefillOxygen = {
 EMS_SpaceSuit_PlayRandomBreathSound = {
 	params ["_sounds", ["_pitch", 0.5]];
 	private _selectedSound = selectRandom _sounds;
-	playSoundUI [_selectedSound, 0.5, _pitch];
+	private _id = playSoundUI [_selectedSound, 0.5, _pitch];
+	_id;
 };
 
 // TODO: Supply own sounds

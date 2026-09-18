@@ -34,9 +34,9 @@ class GVAR(moduleFuelStation): GVAR(baseEdenModule) {
             typeName = "NUMBER";
             defaultValue = "500";
         };
-        class Fuel: Edit {
-            property = QGVAR(moduleFuelStation_Fuel);
-            displayName = CSTRING(FuelLabel);
+        class FuelAmount: Edit {
+            property = QGVAR(moduleFuelStation_FuelAmount);
+            displayName = CSTRING(FuelAmountLabel);
             typeName = "NUMBER";
             defaultValue = "500";
         };
@@ -66,9 +66,9 @@ class GVAR(moduleOxygenStation): GVAR(baseEdenModule) {
             typeName = "NUMBER";
             defaultValue = "500";
         };
-        class Fuel: Edit {
-            property = QGVAR(moduleOxygenStation_Oxygen);
-            displayName = CSTRING(OxygenLabel);
+        class OxygenAmount: Edit {
+            property = QGVAR(moduleOxygenStation_OxygenAmount);
+            displayName = CSTRING(OxygenAmountLabel);
             typeName = "NUMBER";
             defaultValue = "500";
         };

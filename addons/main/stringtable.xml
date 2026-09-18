@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="EMS">
     <Package name="main">
+        <Key ID="str_ems_main_capacitylabel">
+            <English>Capacity</English>
+            <Polish>Pojemność</Polish>
+        </Key>
+        <Key ID="str_ems_main_capacitytooltip">
+            <English>Capacity</English>
+            <Polish>Pojemność</Polish>
+        </Key>
         <Key ID="str_ems_main_checkfuel">
             <English>Check fuel</English>
             <Polish>Sprawdź paliwo</Polish>
@@ -8,6 +16,10 @@
         <Key ID="str_ems_main_checkoxygen">
             <English>Check oxygen</English>
             <Polish>Sprawdź tlen</Polish>
+        </Key>
+        <Key ID="str_ems_main_drainspeedlabel">
+            <English>Drain speed</English>
+            <Polish>Prędkość</Polish>
         </Key>
         <Key ID="str_ems_main_flightbackward">
             <English>Fly backward</English>
@@ -32,6 +44,10 @@
         <Key ID="str_ems_main_flightupward">
             <English>Fly upward</English>
             <Polish>Lot w dół</Polish>
+        </Key>
+        <Key ID="str_ems_main_fuelamountlabel">
+            <English>Fuel amount</English>
+            <Polish>ilość paliwa</Polish>
         </Key>
         <Key ID="str_ems_main_keybindingemsmaincategory">
             <English>EMS - Eva Movement System</English>
@@ -60,6 +76,10 @@
         <Key ID="str_ems_main_module_zerogravityzone_displayname">
             <English>Zero gravity zone</English>
             <Polish>Obszar zerowej grawitacji</Polish>
+        </Key>
+        <Key ID="str_ems_main_oxygenamountlabel">
+            <English>Oxygen amount</English>
+            <Polish>Ilość tlenu</Polish>
         </Key>
         <Key ID="str_ems_main_setting_spacesuitoxygenenabled">
             <English>Oxygen enabled</English>

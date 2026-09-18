@@ -14,7 +14,7 @@ private _synchronizedObjects = synchronizedObjects _logic;
 if (_synchronizedObjects isEqualTo []) exitWith {};
 
 private _capacity = _logic getVariable ["Capacity", 500];
-private _availableFuel = _logic getVariable ["Fuel", 500];
+private _availableFuel = _logic getVariable ["FuelAmount", 500];
 private _drainSpeed = _logic getVariable ["DrainSpeed", 2];
 
 private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetector" };
